@@ -1,10 +1,10 @@
 class PapersController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
 
   def index
   end
 
   def show
+    @paper = Paper.find(params[:id])
   end
 
   def new
@@ -15,6 +15,13 @@ class PapersController < ApplicationController
   end
 
   def create
+    @paper = current_user.papers.new paper_params
+
+    if @paper.save
+      redirect_to @paper, notice: "Your paper was successfully uploaded"
+    else
+      render :new
+    end
   end
 
   def update
@@ -22,4 +29,9 @@ class PapersController < ApplicationController
 
   def delete
   end
+
+  private
+    def paper_params
+      params.require(:paper).permit(:title, :user_id, :description, attachments_fields: [:file, :name])
+    end
 end

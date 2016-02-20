@@ -29,9 +29,8 @@ gem 'carrierwave', '~> 0.10.0'
 gem 'devise', git: "https://github.com/plataformatec/devise.git", ref: '7c75ebe672f11fd26cdd241263ba78ad1276abba'
 
 gem 'font-awesome-rails', '~> 4.5'
-gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'cocoon', '~> 1.2', '>= 1.2.7'
-
-source 'https://rails-assets.org' do
-  gem 'rails-assets-tether', '>= 1.1.0'
-end
+gem 'bootstrap-sass', '~> 3.3.1.0'
+gem 'autoprefixer-rails', '~> 6.3', '>= 6.3.1'
+gem 'jquery-fileupload-rails', '~> 0.4.6'
+gem 'bootswatch-rails', '~> 3.3', '>= 3.3.5'
