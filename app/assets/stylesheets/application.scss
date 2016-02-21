@@ -17,6 +17,7 @@
 @import "bootstrap-sprockets";
 @import "bootswatch/readable/variables";
 @import "bootstrap";
-body { padding-top: 65px; } //for fixed navbar
 @import "bootswatch/readable/bootswatch";
 @import "font-awesome";
+
+body { padding-top: 65px; } //for fixed navbar

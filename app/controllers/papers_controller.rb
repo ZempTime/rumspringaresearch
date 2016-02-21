@@ -1,6 +1,8 @@
 class PapersController < ApplicationController
+  before_action :authenticate_user!
 
   def index
+    @papers = current_user.papers
   end
 
   def show
@@ -32,6 +34,6 @@ class PapersController < ApplicationController
 
   private
     def paper_params
-      params.require(:paper).permit(:title, :user_id, :description, attachments_fields: [:file, :name])
+      params.require(:paper).permit(:title, :user_id, :description, attachments_fields: [:id, :file, :name, :description, :_destroy])
     end
 end

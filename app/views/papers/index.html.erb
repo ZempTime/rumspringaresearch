@@ -1,3 +1,39 @@
-hey
+<div class="row">
+  <h1>Your Papers</h1>
+  <p>Wow, look at all that knowledge.</p>
 
-<%= link_to "new paper", new_paper_path %>
+  <table class="table table-hover">
+    <thead>
+      <th>Name</th>
+      <th>Attachments</th>
+      <th>Views</th>
+      <th>Actions</th>
+    </thead>
+    <tbody>
+      <% if @papers %>
+        <% @papers.each do |paper| %>
+          <tr>
+            <td><%= paper.title %></td>
+          </tr>
+          <tr>
+            <td><%= paper.attachments.count %></td>
+          </tr>
+          <tr>
+            <td><%= paper.views %></td>
+          </tr>
+          <tr>
+            <td><%= link_to "edit", edit_paper_path(paper) %></td>
+          </tr>
+        <% end %>
+      <% else %>
+        <tr>
+          <td>
+            Welcome to your papers page! Get started by <%= link_to "adding a paper", new_paper_path %>.
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<%= link_to "+ new paper", new_paper_path, class: "btn btn-info" %>
+</div>

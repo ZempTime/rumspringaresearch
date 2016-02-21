@@ -9,9 +9,12 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
 
-  <%= render "shared/alerts" %>
   <%= render "shared/navbar" %>
+  <%= render "shared/alerts" %>
+
   <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
