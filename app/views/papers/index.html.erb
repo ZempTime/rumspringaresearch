@@ -10,18 +10,12 @@
       <th>Actions</th>
     </thead>
     <tbody>
-      <% if @papers %>
+      <% if @papers.any? %>
         <% @papers.each do |paper| %>
           <tr>
-            <td><%= paper.title %></td>
-          </tr>
-          <tr>
+            <td><%= link_to paper.title, paper_path(paper) %></td>
             <td><%= paper.attachments.count %></td>
-          </tr>
-          <tr>
-            <td><%= paper.views %></td>
-          </tr>
-          <tr>
+            <td><%= paper.view_count %></td>
             <td><%= link_to "edit", edit_paper_path(paper) %></td>
           </tr>
         <% end %>

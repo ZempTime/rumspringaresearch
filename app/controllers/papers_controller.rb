@@ -1,5 +1,5 @@
 class PapersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
 
   def index
     @papers = current_user.papers
@@ -7,6 +7,7 @@ class PapersController < ApplicationController
 
   def show
     @paper = Paper.find(params[:id])
+    @paper.increment("view_count", 1).save
   end
 
   def new
@@ -14,6 +15,7 @@ class PapersController < ApplicationController
   end
 
   def edit
+    @paper = current_user.papers.find(params[:id])
   end
 
   def create
