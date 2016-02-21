@@ -22,6 +22,7 @@
   <div class="row" id="attachments">
     <h3>Attachments</h3>
     <%= f.fields_for :attachments do |attachment| %>
+      <%= render partial: "attachment_fields", locals: {f: attachment} %>
     <% end %>
     <div class="links">
       <%= link_to_add_association 'add attachment', f, :attachments, class: "btn btn-info" %>

@@ -16,7 +16,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'redis', '~> 3.0'
 
 group :development, :test do
-  gem 'byebug'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'quiet_assets'
 end
 
 group :development do

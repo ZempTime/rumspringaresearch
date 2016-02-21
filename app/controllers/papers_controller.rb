@@ -29,6 +29,13 @@ class PapersController < ApplicationController
   end
 
   def update
+    @paper = current_user.papers.find(params[:id])
+
+    if @paper.update paper_params
+      redirect_to edit_paper_path(@paper), notice: "Your paper was successfully updated"
+    else
+      render :edit
+    end
   end
 
   def delete
@@ -36,6 +43,6 @@ class PapersController < ApplicationController
 
   private
     def paper_params
-      params.require(:paper).permit(:title, :user_id, :description, attachments_fields: [:id, :file, :name, :description, :_destroy])
+      params.require(:paper).permit(:title, :user_id, :description, attachments_attributes: [:id, :paper_id, :file, :name, :description, :_destroy])
     end
 end
