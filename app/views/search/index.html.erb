@@ -18,7 +18,9 @@
   <% end %>
 
   <div class="row">
-    <%= render partial: "result", collection: @papers.results, as: :paper %>
+    <div class="col-md-8 col-md-offset-2">
+      <%= render partial: "result", collection: @papers.results, as: :paper %>
+    </div>
   </div>
 
   <div class="text-center">

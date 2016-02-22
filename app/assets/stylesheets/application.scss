@@ -20,7 +20,9 @@
 @import "bootswatch/readable/bootswatch";
 @import "font-awesome";
 
-body > .container { padding-top: 65px; } //for fixed navbar
+body > .container {
+  padding-top: 65px; //for fixed navbar
+}
 
 .footer {
   background-color: #f7f7fa;
