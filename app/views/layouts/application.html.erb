@@ -9,15 +9,15 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
 
-  <%= render "shared/navbar" %>
-  <%= render "shared/alerts" %>
-
   <body>
+    <%= render "shared/navbar" %>
+    <%= render "shared/alerts" %>
     <div class="container">
       <div class="alert alert-info fade in" role="alert">
         Attn: This site is currently in a live alpha! Anything uploads here are temporary and will be deleted. <%= link_to "More Info", about_path %>
       </div>
       <%= yield %>
     </div>
+    <%= render "shared/footer" %>
   </body>
 </html>

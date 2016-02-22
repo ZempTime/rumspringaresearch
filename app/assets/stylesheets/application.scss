@@ -20,7 +20,12 @@
 @import "bootswatch/readable/bootswatch";
 @import "font-awesome";
 
-body { padding-top: 65px; } //for fixed navbar
+body > .container { padding-top: 65px; } //for fixed navbar
+
+.footer {
+  background-color: #f7f7fa;
+  padding-top: 15px;
+}
 
 .result-card {
   width: 100%;
