@@ -21,3 +21,15 @@
 @import "font-awesome";
 
 body { padding-top: 65px; } //for fixed navbar
+
+.result-card {
+  width: 100%;
+}
+
+.result-card * p {
+  margin-top: 22px;
+}
+
+.result-card:hover {
+  background-color: #f7f7fa;
+}

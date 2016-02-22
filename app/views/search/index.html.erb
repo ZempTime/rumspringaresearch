@@ -1,1 +1,27 @@
-<h1>home page/search www WWW</h1>
+<div class="row">
+  <h1 class="text-center">Search</h1>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 text-center">
+      <%= form_tag({url: search_path}, {method: "get", class: "form-inline"}) do %>
+        <%= text_field_tag :q, params[:q], autofocus: true, class: "form-control" %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if @no_results %>
+    <div class="row">
+      <p class="text-center text-danger" style="margin-top:20px;">
+        No results matching that query.
+      </p>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <%= render partial: "result", collection: @papers.results, as: :paper %>
+  </div>
+
+  <div class="text-center">
+    <%= will_paginate @papers %>
+  </div>
+</div>

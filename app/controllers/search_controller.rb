@@ -1,10 +1,18 @@
 class SearchController < ApplicationController
   def index
+    @papers = Paper.search(search_query, page: params[:page], per_page: 2)
   end
 
-  def search
+  def landing
   end
 
   def about
   end
+
+  private
+    def search_query
+      return params[:q] unless params[:q]&.empty?
+      @no_results = true
+      "*"
+    end
 end
