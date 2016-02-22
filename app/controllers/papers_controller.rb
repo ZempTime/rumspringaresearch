@@ -33,6 +33,7 @@ class PapersController < ApplicationController
     @paper = current_user.papers.find(params[:id])
 
     if @paper.update paper_params
+      @paper.attachments.each { |a| IndexAttachmentJob.perform_later a}
       redirect_to edit_paper_path(@paper), notice: "Your paper was successfully updated"
     else
       render :edit

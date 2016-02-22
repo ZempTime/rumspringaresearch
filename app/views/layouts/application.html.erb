@@ -7,14 +7,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <script src="http://twitter.github.com/bootstrap/assets/js/jquery.js"></script>
   </head>
 
   <body>
     <%= render "shared/navbar" %>
     <%= render "shared/alerts" %>
     <div class="container" id="content">
-      <div class="alert alert-info fade in" role="alert">
-        Attn: This site is currently in a live alpha! Any uploads here are temporary and will be deleted. <%= link_to "More Info", about_path %>
+      <div class="text-center" style="padding-top: 10px; height: 45px; background-color: #5bc0de; color: #fff;">
+        <p>
+          Attn: This site is currently in a live alpha! Any uploads here are temporary and will be deleted. <%= link_to "More Info", about_path %>
+        </p>
       </div>
       <%= yield %>
     </div>
