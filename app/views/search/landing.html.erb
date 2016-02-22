@@ -9,7 +9,7 @@
 
   <div class="row">
     <div class="col-md-6 col-md-offset-3 text-center">
-      <%= form_tag({url: search_path}, {method: "get", class: "form-inline"}) do %>
+      <%= form_tag({url: "/search"}, {method: "get", class: "form-inline"}) do %>
         <%= text_field_tag :q, params[:q], autofocus: true, class: "form-control" %>
         <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
