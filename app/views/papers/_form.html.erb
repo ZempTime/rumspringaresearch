@@ -19,7 +19,7 @@
     <%= f.text_area :description, placeholder: "What's your research about? (Feel free to add words that help with searching at the end)", class: "form-control" %>
   </div>
 
-  <div class="row" id="attachments">
+  <div class="row" style="margin-left: 20px;">
     <h3>Attachments</h3>
     <%= f.fields_for :attachments do |attachment| %>
       <%= render partial: "attachment_fields", locals: {f: attachment} %>
