@@ -1,3 +1,37 @@
 <div class="row">
-  <h1>LANDING</h1>
+  <div class="jumbotron">
+    <h3 class="text-center">Find interesting and underused research and datasets.</h3>
+  </div>
+
+  <p class="text-center">
+    Dare you.
+  </p>
+
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3 text-center">
+      <%= form_tag({url: search_path}, {method: "get", class: "form-inline"}) do %>
+        <%= text_field_tag :q, params[:q], autofocus: true, class: "form-control" %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3>Convenient, nice searching.</h3>
+      <p>
+        Intuitive modern searching*. None of that EBSCO stuff.
+      </p>
+      <p class="text-small">
+        <%= link_to "*hopefully!", "/about" %>
+      </p>
+    </div>
+    <div class="col-md-6">
+      <h3>Give underused research a chance.</h3>
+      <p>
+        Not statistically significant? Not a big enough sample size? Don't worry -
+        someone would <b>love</b> to find your work.
+      </p>
+    </div>
+  </div>
 </div>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   get "/search", to: "search#index", as: :search
+  get "/about", to: "search#about", as: :about
 
 
 
