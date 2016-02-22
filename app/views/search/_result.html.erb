@@ -1,16 +1,14 @@
 <%= link_to paper do %>
   <div class="row result-card">
-    <div class="col-md-3">
+    <div class="col-md-4">
       <h3><%= paper.title %></h3>
-    </div>
-    <div class="col-md-5">
       <p>
-        <%= truncate paper.description %>
+        Attachments: <%= paper.attachments.count %>
       </p>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-8">
       <p>
-        Views: <%= paper.view_count %> Attachments: <%= paper.attachments.count %>
+        <%= truncate paper.description, length: 240 %>
       </p>
     </div>
   </div>
