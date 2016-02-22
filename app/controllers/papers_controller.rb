@@ -1,5 +1,5 @@
 class PapersController < ApplicationController
-  before_action :authenticate_user!, except: [:show]
+  before_action :authenticate_user!, except: [:show, :download]
 
   def index
     @papers = current_user.papers
