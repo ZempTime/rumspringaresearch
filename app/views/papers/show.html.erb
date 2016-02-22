@@ -1,13 +1,36 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-offset-md-3">
-      <h1>
-        <%= @paper.title %>
-      </h1>
+    <h1>
+      <%= @paper.title %>
+    </h1>
 
-      <p>
-        <%= @paper.description %>
-      </p>
+    <p>
+      <%= @paper.description %>
+    </p>
+  </div>
+
+    <div class="row">
+      <h2>Attachments</h2>
+      <% @paper.attachments.each do |attachment| %>
+        <div class="col-md-4">
+          <h3>
+            <%= attachment.name %>
+          </h3>
+          <p>
+            <%= attachment.description %>
+          </p>
+          <p>
+            <%= attachment.file.file.original_filename %>
+          </p>
+          <p>
+            <%= link_to download_paper_attachment_path(@paper, attachment), class: "btn btn-info" do %>
+              <%= fa_icon "cloud-download" %> Download
+            <% end %>
+          </p>
+        </div>
+      <% end %>
     </div>
   </div>
+
+  <%= link_to "back", :back %>
 </div>

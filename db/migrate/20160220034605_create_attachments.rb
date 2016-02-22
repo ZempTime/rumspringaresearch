@@ -6,6 +6,7 @@ class CreateAttachments < ActiveRecord::Migration[5.0]
       t.string :file
       t.integer :paper_id
       t.integer :downloads, default: 0
+      t.text :file_text
 
       t.timestamps
     end

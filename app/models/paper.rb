@@ -6,4 +6,14 @@ class Paper < ApplicationRecord
   enum status: [:draft, :published, :flagged]
 
   searchkick
+
+  def search_data
+    {
+      title: title,
+      description: description,
+      attachment_name: attachments.map(&:name),
+      attachment_description: attachments.map(&:description),
+      attachment_text: attachments.map(&:file_text),
+    }
+  end
 end

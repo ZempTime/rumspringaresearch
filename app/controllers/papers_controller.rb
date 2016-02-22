@@ -22,6 +22,7 @@ class PapersController < ApplicationController
     @paper = current_user.papers.new paper_params
 
     if @paper.save
+      @paper.attachments.each { |a| IndexAttachmentJob.perform_later a}
       redirect_to @paper, notice: "Your paper was successfully uploaded"
     else
       render :new
@@ -39,6 +40,12 @@ class PapersController < ApplicationController
   end
 
   def delete
+  end
+
+  def download
+    @paper = Paper.find(params[:paper_id])
+    @attachment = @paper.attachments.find(params[:id])
+    send_file @attachment.file.path
   end
 
   private

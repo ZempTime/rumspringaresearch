@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20160220034605) do
     t.string   "file"
     t.integer  "paper_id"
     t.integer  "downloads",   default: 0
+    t.text     "file_text"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
   end

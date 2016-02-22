@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @papers = Paper.search(search_query, page: params[:page], per_page: 2)
+    @papers = Paper.search(search_query, page: params[:page], per_page: 12)
   end
 
   def landing
