@@ -27,7 +27,7 @@ group :development do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'carrierwave', '~> 1.3.2'
+gem 'carrierwave', '~> 2.2.5'
 gem 'devise', git: "https://github.com/plataformatec/devise.git", ref: '7c75ebe672f11fd26cdd241263ba78ad1276abba'
 
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
