@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.0'
 
-gem 'rails', '~> 6.0', '>= 6.0.3.5'
+gem 'rails', '~> 7.1', '>= 7.1.5.2'
 gem 'pg', '~> 0.18'
 gem 'puma'
 gem 'sass-rails', '~> 5.0', '>= 5.0.8'
